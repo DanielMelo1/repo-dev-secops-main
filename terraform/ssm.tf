@@ -2,7 +2,7 @@
 resource "aws_ssm_parameter" "docker_username" {
   name  = "/devsecops/docker_username"
   type  = "SecureString"
-  value = "DanielMelo5627"
+  value = "dreimao4@gmail.com"
 }
 
 # 🔥 Armazena a senha do Docker Hub no SSM Parameter Store
