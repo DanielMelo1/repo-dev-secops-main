@@ -18,3 +18,9 @@ resource "aws_ssm_parameter" "ssh_key" {
   type  = "SecureString"
   value = "key.pem"
 }
+
+resource "aws_ssm_parameter" "github-newtoken" {
+  name  = "/devsecops/gituhb-token"
+  type  = "SecureString"
+  value = "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"
+}

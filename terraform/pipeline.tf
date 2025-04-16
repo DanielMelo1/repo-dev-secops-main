@@ -1,8 +1,3 @@
-# Data source para acessar o token do GitHub armazenado no SSM Parameter Store
-data "aws_ssm_parameter" "github_token" {
-  name            = "/devsecops/github_token"
-  with_decryption = true
-}
 
 # 🔥 Criando Roles para o Pipeline
 resource "aws_iam_role" "codepipeline_role" {
@@ -124,10 +119,10 @@ resource "aws_codepipeline" "my_pipeline" {
       version  = "1"
       output_artifacts = ["source_output"]
       configuration = {
-        Owner      = var.github_owner
-        Repo       = var.github_repo
-        Branch     = var.github_branch
-        OAuthToken = data.aws_ssm_parameter.github_token.value  # Usa o token do SSM
+      Owner      = var.github_owner
+      Repo       = var.github_repo
+      Branch     = var.github_branch
+      OAuthToken = var.github_token
       }
     }
   }
