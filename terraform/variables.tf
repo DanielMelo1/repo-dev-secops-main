@@ -30,7 +30,7 @@ variable "key_pair_ssh" {
 
 variable "s3_bucket_name" {
   description = "Nome do bucket S3 para armazenar os artefatos do CodePipeline"
-  default     = "bucket-devesecops-daniel" //Substitua por seu bucket S3
+  default     = "bucket-devsecops-daniel" //Substitua por seu bucket S3
 }
 
 variable "github_owner" {

@@ -18,37 +18,6 @@ resource "aws_iam_policy_attachment" "codepipeline_policy" {
   policy_arn = "arn:aws:iam::aws:policy/AWSCodePipeline_FullAccess"
 }
 
-# 🔥 Adicionando permissões S3 para o CodePipeline
-resource "aws_iam_policy" "codepipeline_s3_policy" {
-  name        = "CodePipelineS3Policy"
-  description = "Permite ao CodePipeline acessar o bucket de artefatos"
-  policy      = jsonencode({
-    Version = "2012-10-17",
-    Statement = [
-      {
-        Effect   = "Allow",
-        Action   = [
-          "s3:PutObject",
-          "s3:GetObject",
-          "s3:ListBucket",
-          "s3:GetObjectVersion",
-          "s3:GetBucketVersioning"
-        ],
-        Resource = [
-          "arn:aws:s3:::${var.s3_bucket_name}",
-          "arn:aws:s3:::${var.s3_bucket_name}/*"
-        ]
-      }
-    ]
-  })
-}
-
-resource "aws_iam_policy_attachment" "codepipeline_s3_policy_attach" {
-  name       = "codepipeline-s3-policy-attachment"
-  roles      = [aws_iam_role.codepipeline_role.name]
-  policy_arn = aws_iam_policy.codepipeline_s3_policy.arn
-}
-
 resource "aws_iam_role" "codebuild_role" {
   name = "codebuild_role"
   
@@ -149,10 +118,10 @@ resource "aws_codepipeline" "my_pipeline" {
       version  = "1"
       output_artifacts = ["source_output"]
       configuration = {
-        Owner      = var.github_owner
-        Repo       = var.github_repo
-        Branch     = var.github_branch
-        OAuthToken = var.github_token
+      Owner      = var.github_owner
+      Repo       = var.github_repo
+      Branch     = var.github_branch
+      OAuthToken = var.github_token
       }
     }
   }
