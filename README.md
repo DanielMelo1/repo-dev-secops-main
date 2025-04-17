@@ -60,7 +60,7 @@ repo-dev-secops-main/
 
 ## Artigo Detalhado
 
-Para uma explicação detalhada deste projeto, você pode ler o [artigo completo no Medium]([https://medium.com/@dreimao](https://medium.com/@dreimao4/devsecops-na-pr%C3%A1tica-pipeline-seguro-com-terraform-e-aws-32865d1b5c98)).
+Para uma explicação detalhada deste projeto, você pode ler o [artigo completo no Medium][https://medium.com/@dreimao4/devsecops-na-pr%C3%A1tica-pipeline-seguro-com-terraform-e-aws-32865d1b5c98].
 
 ## Contribuições
 
