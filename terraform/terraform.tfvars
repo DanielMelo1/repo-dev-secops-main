@@ -1,3 +1,3 @@
-github_token ="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" //Substitua por seu token no github
-docker_username = "dreimao4@gmail.com" //substitua por seu usuario docker
-docker_password = "*Usalg5627#" //substitua por sua senha docker
+github_token ="coloque-aqui-seu-token-github" //Substitua por seu token no github
+docker_username = "coloque-aqui-seu-usuario-docker" //substitua por seu usuario docker
+docker_password = "coloque-aqui-sua-senha-docker" //substitua por sua senha docker
